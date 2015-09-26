@@ -180,7 +180,7 @@ var rainbow = {
  * "Bieber Linux"
  *
  */
-
+var linuxFlavors = ['Gentoo', 'Fedora', 'Debian', 'Slackware', 'Red Hat', 'Bieber Linux'];
 
 /* Step 15
  *
@@ -194,7 +194,7 @@ var rainbow = {
  * "cytosine"
  *
  */
-
+var DNA = ['nucleatides', 'guanine', 'adenine', 'thymine', 'cytosine'];
 
 /* Step 16
  *
@@ -207,7 +207,12 @@ var rainbow = {
  * Surface      => 320
  *
  */
-
+var laptopCosts = {
+  MacBook: 1500,
+  Alienware: 2500,
+  HP: 499,
+  Surface: 320
+};
 
 /* Step 17
  *
@@ -223,8 +228,8 @@ var rainbow = {
  * "Species"
  *
  */
-
-
+var livingOrganismClassification = ['Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus', 'Species']
+;
 /* Step 18
  *
  * Declare an array named "scmList" with
@@ -238,7 +243,7 @@ var rainbow = {
  *
  */
 
-
+var scmList = ['git', 'svn', 'mercurial', 'bazaar', 'cvs'];
 /* Step 19
  *
  * Define a literal object named "beers" with
@@ -256,7 +261,14 @@ var rainbow = {
  *                  "Golden"
  *
  */
-
+var beers = {
+  IPA: 'Ale',
+  Lager: 'Strong',
+  Heffeweisen: 'German',
+  Stout: ['Thick', 'Dark'],
+  Porter: 'Bitter',
+  Ale: ['Light', 'Golden']
+};
 
 /* Step 20
  *
@@ -266,7 +278,9 @@ var rainbow = {
  * @return {String}
  *
  */
-
+function sahara_river() {
+  return 'Nile River';
+}
 
 /* Step 21
  *
