@@ -307,7 +307,9 @@ function addNumbers(num, num2) {
  * @return {Bool}
  *
  */
-
+function installLinux(type) {
+  return linuxFlavors.indexOf(type) !== -1;
+}
 
 /* Step 23
  *
@@ -326,7 +328,20 @@ function addNumbers(num, num2) {
  * @return {Bool when False, String when True}
  *
  */
+function drink(beer) {
+  var statement = 'This ' + beer + ' is ';
+  var value = beers[beer];
+  if(!(value)) {
+    return false;
+  }else if(Array.isArray(value)) {
+    console.log(value.length);
+    for(var i =0; i < value.length; i++) {
+      statement += value[i] + ' and ';
+    }
+  }
+  return statement + value + '.';
 
+}
 
 /* Step 24
  *
