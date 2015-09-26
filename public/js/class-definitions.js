@@ -334,7 +334,6 @@ function drink(beer) {
   if(!(value)) {
     return false;
   }else if(Array.isArray(value)) {
-    console.log(value.length);
     for(var i =0; i < value.length; i++) {
       statement += value[i] + ' and ';
     }
@@ -354,7 +353,13 @@ function drink(beer) {
  * @return {String if true else return false}
  *
  */
+function browseURL(checkURL) {
+  if(!(browsers[checkURL])) {
+    return false;
+  }
 
+  return browsers[checkURL];
+}
 
 /* Step 25
  *
