@@ -1042,7 +1042,9 @@ var Cookie = function(flavor) {
  * Meal class
  * @param {Array} foods All the foods in the meal
  */
-
+var Meal = function(foods) {
+  this.foods = [];
+};
 
 /**
  * Create a new instance of the Classes you defined above, below!
