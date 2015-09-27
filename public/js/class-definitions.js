@@ -372,8 +372,16 @@ function browseURL(checkURL) {
  *
  */
 function listLivingOrgClass() {
-
+  var ul = '<ul>';
+  for(var i = 0; i < livingOrganismClassification.length; i++) {
+    ul += '<li>' + livingOrganismClassification[i] + '</li>';
+  }
+  return ul + '</ul>';
 }
+
+
+
+// livingOrganismClassification
 
 /* Step 26
  *
@@ -395,11 +403,11 @@ function listLivingOrgClass() {
  *
  */
 function favoritePlanet(currentPlanet) {
-  if(!(planets[currentPlanet])) {
+  if(planets.indexOf(currentPlanet) == -1) {
     return currentPlanet + ' is not a planet!';
   }else{
   var randomPlanet = planets[Math.floor(Math.random() * planets.length)];
-  return 'I\'m from ' + currentPlanet + ', but I wish I could go to ' + randomPlanet;
+  return 'I\'m from ' + currentPlanet + ', but I wish I could go to ' + randomPlanet + '.';
   }
 
 }
@@ -962,12 +970,13 @@ var Vehicle = function(make, model) {
  */
 var Shape = function(sides) {
   this.sides = sides;
-  if(sides >= 3) {
-    return sides;
-  }else if(sides <= 2) {
-    return null;
+  if(this.sides >= 3) {
+    return this.sides;
+  }else {
+    this.sides = null;
 
   }
+
 
 };
 
@@ -1190,7 +1199,15 @@ Shape.prototype.getType = function() {
  * Return true if openBox opens the box, false otherwise.
  *
  */
-
+Box.prototype.openBox = function() {
+  if(this.isOpen === false) {
+    this.isOpen = true;
+    return true;
+  }
+  if(this.isOpen === true) {
+    return false;
+  }
+};
 
  /* Step 85
  *
@@ -1199,7 +1216,16 @@ Shape.prototype.getType = function() {
  * Return true if openClose opens the door, false if openClose closes the door.
  *
  */
-
+Door.prototype.openClose = function() {
+  if(this.isOpen === false) {
+    this.isOpen = true;
+    return true;
+  }
+  if(this.isOpen === true) {
+    this.isOpen = false;
+    return false;
+  }
+};
 
 /* Step 86
  *
