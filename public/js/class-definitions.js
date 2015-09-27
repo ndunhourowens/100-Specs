@@ -1012,7 +1012,9 @@ var Shoe = function(size, color) {
  * House class
  * @param {number} stories How many stories tall the house is
  */
-
+var House = function(stories) {
+  this.stories = stories;
+};
 
 /**
  * Step 57
