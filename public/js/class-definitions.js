@@ -444,8 +444,6 @@ function purchaseLaptop(laptop) {
   }
   return laptopCosts[laptop].toString();
 }
-
-
 // var laptopCosts = {
 //   MacBook: 1500,
 //   Alienware: 2500,
@@ -491,6 +489,12 @@ function canTalkAbout(place) {
  *   write
  *
  */
+var Pen = function (color) {
+  this.color = color;
+};
+Pen.prototype.write = function(message) {
+  return this.color + ' ' + message;
+};
 
 
 /* Step 31
