@@ -1001,7 +1001,10 @@ var Door = function(isOpen) {
  * @param {number} size  The shoe size
  * @param {string} color The shoe color
  */
-
+var Shoe = function(size, color) {
+  this.size = size;
+  this.color = color;
+};
 
 /**
  * Step 56
