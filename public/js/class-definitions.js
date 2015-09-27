@@ -1413,5 +1413,5 @@ var cookieMonsterBlocked = new Cookie('gingerbread').swipedByCookieMonster('Satu
  * and assign the values to each variable below.
  *
  */
-var badForYou;
-var goodForYou;
+var badForYou = new Meal(['pizza', 'ice cream']).containsJunkFood();
+var goodForYou = new Meal(['carrot', 'lettuce']).containsJunkFood();
