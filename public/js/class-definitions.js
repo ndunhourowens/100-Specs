@@ -1069,8 +1069,8 @@ var catBox = new Box(new Animal('Cat', gender.unknown), true);
 var christmasPresent = new Box('exists', false);
 
 // Create 2 doors
-var automaticDoor;
-var bankVault;
+var automaticDoor = new Door(true);
+var bankVault = new Door(false);
 
 // Create 2 shoes
 var rubySlippers;
