@@ -1043,7 +1043,7 @@ var Cookie = function(flavor) {
  * @param {Array} foods All the foods in the meal
  */
 var Meal = function(foods) {
-  this.foods = [];
+  this.foods = foods;
 };
 
 /**
@@ -1086,11 +1086,11 @@ var halogen = new Lightbulb(false);
 
 // Create 2 cookies of different flavors
 var chocolateChip = new Cookie('chocolate');
-var gingerbread = new Cookie('chocolate');
+var gingerbread = new Cookie('gingerbread');
 
 // Create 2 different meals
-var breakfast;
-var dinner;
+var breakfast = new Meal(['cereal', 'milk']);
+var dinner = new Meal(['fish', 'vegetables']);
 
 
  /* Steps 81 to 90
@@ -1114,8 +1114,15 @@ var dinner;
  *       Any other species => "Could not determine if warm-blooded"
  *
  */
-
-
+Animal.prototype.isWarmBlooded = function() {
+  if(this.species == 'Fish') {
+    return false;
+  }
+  if(this.species == 'Monkey' || this.species == 'Bird') {
+    return true;
+  }
+  return 'Could not determine if warm-blooded';
+};
 /* Step 82
  *
  * Declare a Vehicle method called drive that accepts a parameter
