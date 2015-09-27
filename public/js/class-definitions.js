@@ -568,7 +568,16 @@ Garden.prototype.grow = function() {
  *   removePlanet
  *
  */
-
+var SolarSystem = function() {
+  this.planets = [];
+};
+SolarSystem.prototype.addPlanet = function(planet) {
+  this.planets.push(planet);
+};
+SolarSystem.prototype.removePlanet = function(planet) {
+  var index = (this.planets).indexOf(planet);
+  this.planets.splice(index, 1);
+};
 
 /* Step 33
  *
@@ -602,8 +611,32 @@ Garden.prototype.grow = function() {
  *   marries
  *
  */
+function PrincessLeia(name, money, age, gender, isInTrouble) {
+  Person.call(this, name, money, age, gender, isInTrouble);
+  this.isInTrouble = null;
+}
+PrincessLeia.prototype = Object.create(Person.prototype,
+  {constructor:
+    {value: PrincessLeia}
+  });
 
-
+PrincessLeia.prototype.shootsGun = function() {
+  this.isInTrouble = false;
+  return 'Leia shoots her gun wildly';
+};
+PrincessLeia.prototype.getsInTrouble = function() {
+  this.isInTrouble = true;
+  return 'Help me Obi-wan Kenobi, you\'re my only hope';
+};
+PrincessLeia.prototype.marries = function(guy) {
+  if(guy === 'Han Solo') {
+    return true;
+  }
+  if(guy === 'Luke Skywalker') {
+    return 'Gross!';
+  }
+  return false;
+};
 /* Step 34
  *
  * Define a class named "Stapler" with properties "color"
@@ -621,7 +654,17 @@ Garden.prototype.grow = function() {
  *   staplePapers
  *
  */
+var Stapler = function(color, maxPapers) {
+  this.color = color;
+  this.maxPapers = maxPapers;
+};
 
+Stapler.prototype.staplePapers = function(staplePapers) {
+  if(staplePapers <= this.maxPapers) {
+    return true;
+  }
+  return false;
+};
 
 /* Step 35
  *
@@ -661,7 +704,43 @@ Garden.prototype.grow = function() {
  *   addDiscovery
  *
  */
+var Scientist = function(name, money, age, gender, disciplines, discoveries) {
+  Person.call(this, name, money, age, gender);
+  this.disciplines = [];
+  this.discoveries = [];
+};
 
+Scientist.prototype = Object.create(Person.prototype, {
+  constructor: {value: Scientist}
+});
+
+Scientist.prototype.addDiscipline = function(arg) {
+  this.disciplines.push(arg);
+};
+
+Scientist.prototype.checkDiscipline = function(argue) {
+  if(this.disciplines.indexOf(argue) > -1) {
+    return true;
+  }
+  return false;
+};
+
+Scientist.prototype.addDiscovery = function(arg) {
+  this.discoveries.push(arg);
+  var str = 'I discovered ' ;
+  for (var i = 0; i < this.discoveries.length; i++) {
+    // var end = this.discoveries[i] + ' and ';
+    if(i === this.discoveries.length - 1 && this.discoveries.length >1) {
+      return str += 'and ' + this.discoveries[i] + '.';
+    }else if(this.discoveries.length === 1) {
+      return str += this.discoveries[i] + '.';
+    }else if(this.discoveries.length === 2) {
+      str += this.discoveries[i] + ' ';
+    }else {
+      str += this.discoveries[i] + ', ';
+    }
+}
+};
 
 /* Step 36
  *
