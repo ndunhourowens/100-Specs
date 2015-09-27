@@ -425,7 +425,20 @@ function favoritePlanet(currentPlanet) {
  *   earnMoney
  *
  */
+var Person = function(name, money, age, gender) {
+  this.name = name;
+  this.money = money;
+  this.age = age;
+  this.gender = gender;
+};
 
+Person.prototype.spendMoney = function(useMoney) {
+  this.money = this.money - useMoney;
+};
+
+Person.prototype.earnMoney = function(makeMoney) {
+  this.money = this.money + makeMoney;
+};
 
 /* Step 28
  *
@@ -493,7 +506,7 @@ var Pen = function (color) {
   this.color = color;
 };
 Pen.prototype.write = function(message) {
-  return this.color + ' ' + message;
+  return this.color + ': ' + message;
 };
 
 
