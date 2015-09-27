@@ -1332,8 +1332,8 @@ var notWarmOrColdAnimal = snake.isWarmBlooded();
  * and assign the values to each variable below.
  *
  */
-var streetDriving;
-var forwardDriving;
+var streetDriving = civic.drive('manoa');
+var forwardDriving = civic.drive();
 
 
  /* Step 93
