@@ -946,7 +946,10 @@ var Animal = function(species, gender) {
  * @param {string} make The vehicle's make
  * @param {string} model The vehicle's model
  */
-
+var Vehicle = function(make, model) {
+  this.make = make;
+  this.model = model;
+};
 
 /**
  * Step 52
@@ -957,7 +960,16 @@ var Animal = function(species, gender) {
  * value of the sides property to null.
  *
  */
+var Shape = function(sides) {
+  this.sides = sides;
+  if(sides >= 3) {
+    return sides;
+  }else if(sides <= 2) {
+    return null;
 
+  }
+
+};
 
 /**
  * Step 53
@@ -967,7 +979,10 @@ var Animal = function(species, gender) {
  * @param {boolean} isOpen     Whether the box is opened or closed
  */
 
-
+var Box = function(contents, isOpen) {
+  this.contents = contents;
+  this.isOpen = isOpen;
+};
 /**
  * Step 54
  *
