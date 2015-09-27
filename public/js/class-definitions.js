@@ -990,6 +990,9 @@ var Box = function(contents, isOpen) {
  * @param {boolean} isOpen Whether the door is opened or closed
  */
 
+var Door = function(isOpen) {
+  this.isOpen = isOpen;
+};
 
 /**
  * Step 55
