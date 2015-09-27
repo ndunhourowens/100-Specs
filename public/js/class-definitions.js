@@ -438,8 +438,20 @@ function favoritePlanet(currentPlanet) {
  * @return {String}
  *
  */
+function purchaseLaptop(laptop) {
+  if(!(laptopCosts[laptop])) {
+    return -1;
+  }
+  return laptopCosts[laptop].toString();
+}
 
 
+// var laptopCosts = {
+//   MacBook: 1500,
+//   Alienware: 2500,
+//   HP: 499,
+//   Surface: 320
+// };
 /* Step 29
  *
  * Define a function named "canTalkAbout" that takes
